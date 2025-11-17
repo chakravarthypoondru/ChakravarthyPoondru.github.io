@@ -145,7 +145,9 @@
 
     <!-- GRID PANELS WITH CYCLING CAPTIONS -->
     <div class="grid-container" id="home">
-      <div class="panel"><span class="caption" id="cap1"></span></div>
+      <div class="panel">
+        <img id="photo-rotator" style="max-width:100%; max-height:100%; border-radius:8px;" />
+      </div>
       <div class="panel"><span class="caption" id="cap2"></span></div>
       <div class="panel"><span class="caption" id="cap3"></span></div>
       <div class="panel"><span class="caption" id="cap4"></span></div>
@@ -167,7 +169,7 @@
   ];
 
   const elements = [
-    document.getElementById("cap1"),
+    // document.getElementById("cap1"),
     document.getElementById("cap2"),
     document.getElementById("cap3"),
     document.getElementById("cap4"),
@@ -191,6 +193,28 @@
   rotate();
   setInterval(rotate, 3000); // change caption every 3 seconds
 </script>
+
+  
+  /* Photo Rotation Logic  */
+<script>
+  const photos = [
+    "https://github.com/chakravarthypoondru/ChakravarthyPoondru.github.io/blob/1f872dbc6440ef0c3d57e5a9af2b396cbdef494e/photos/Flowers.jpg",
+    "https://github.com/chakravarthypoondru/ChakravarthyPoondru.github.io/blob/1f872dbc6440ef0c3d57e5a9af2b396cbdef494e/photos/Hills.jpg",
+    "https://github.com/chakravarthypoondru/ChakravarthyPoondru.github.io/blob/1f872dbc6440ef0c3d57e5a9af2b396cbdef494e/photos/Light.jpg"
+  ];
+
+  let pIndex = 0;
+  const photoElement = document.getElementById("cap1");
+
+  function rotatePhotos() {
+    photoElement.src = photos[pIndex];
+    pIndex = (pIndex + 1) % photos.length;
+  }
+
+  rotatePhotos();                 // Show first image immediately
+  setInterval(rotatePhotos, 3000); // Rotate every 3 seconds
+</script>
+
 
 </body>
 </html>
