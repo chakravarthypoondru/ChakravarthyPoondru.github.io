@@ -1,49 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Website</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <!-- LEFT PANEL -->
-  <div class="sidebar">
-    <h2>My Interests</h2>
-    <div class="sidebar-item">Market</div>
-    <div class="sidebar-item">Domestic News</div>
-    <div class="sidebar-item">International News</div>
-    <div class="sidebar-item">LLMs & AI Tools</div>
-    <div class="sidebar-item">Projects</div>
-  </div>
+// CAPTION ROTATION LOGIC
+const captions = [
+  "Health",
+  "Wealth",
+  "Layoffs",
+  "Emotions",
+  "News",
+  "AI & LLM Knowledge"
+];
+const captionEl = document.getElementById("main-caption");
+let capIndex = 0;
+function rotateCaption() {
+  captionEl.textContent = captions[capIndex];
+  captionEl.classList.add("show");
+  setTimeout(() => captionEl.classList.remove("show"), 2000);
+  capIndex = (capIndex + 1) % captions.length;
+}
+rotateCaption();
+setInterval(rotateCaption, 2500);
 
-  <div class="main">
-    <!-- TOP MENU -->
-    <div class="top-nav">
-      <a href="#home">Home</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <!-- FLEX ROW: PHOTO | ABOUT ME | CAPTION -->
-    <div class="content-row">
-      <div class="photo-panel">
-        <img id="photo-rotator" class="photo-large" />
-      </div>
-      <div class="about-panel">
-        <h2>About Me</h2>
-        <p>
-          Hi, I'm Chakravarthy Poondru.<br />
-          I am passionate about markets, international/domestic news, AI, and developing new projects. 
-          <br /><br />
-          This site showcases my interests and ongoing works in LLMs and real-world applications. 
-          Feel free to explore!
-        </p>
-      </div>
-      <div class="caption-panel">
-        <span class="caption" id="main-caption"></span>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+// PHOTO ROTATION LOGIC
+const photos = [
+  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Flowers.jpg",
+  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Hills.jpg",
+  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Light.jpg"
+];
+// If you ever add images to /photos be sure URLs are correct and web-ready formats!
+// You can test the links directly in your browser—these current ones should work.
+let pIndex = 0;
+const photoElement = document.getElementById("photo-rotator");
+function rotatePhotos() {
+  photoElement.src = photos[pIndex];
+  pIndex = (pIndex + 1) % photos.length;
+}
+rotatePhotos();
+setInterval(rotatePhotos, 2500);
