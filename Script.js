@@ -7,7 +7,6 @@ const photos = [
 let pIndex = 0;
 const photoElement = document.getElementById("photo-rotator");
 
-// Defensive: show placeholder if picture fails
 photoElement.onerror = () => {
   photoElement.src = "https://via.placeholder.com/400x400?text=No+Photo";
 };
