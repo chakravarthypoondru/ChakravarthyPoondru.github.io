@@ -197,22 +197,22 @@
   
   /* PHOTO ROTATION LOGIC  */
 <script>
-  const photos = [
-    "https://github.com/chakravarthypoondru/ChakravarthyPoondru.github.io/blob/1f872dbc6440ef0c3d57e5a9af2b396cbdef494e/photos/Flowers.jpg",
-    "https://github.com/chakravarthypoondru/ChakravarthyPoondru.github.io/blob/1f872dbc6440ef0c3d57e5a9af2b396cbdef494e/photos/Hills.jpg",
-    "https://github.com/chakravarthypoondru/ChakravarthyPoondru.github.io/blob/1f872dbc6440ef0c3d57e5a9af2b396cbdef494e/photos/Light.jpg"
+ const photos = [
+    "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Flowers.jpg",
+    "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Hills.jpg",
+    "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Light.jpg"
   ];
 
   let pIndex = 0;
-  const photoElement = document.getElementById("cap1");
+  const photoElement = document.getElementById("photo-rotator");
 
   function rotatePhotos() {
     photoElement.src = photos[pIndex];
     pIndex = (pIndex + 1) % photos.length;
   }
 
-  rotatePhotos();                 // Show first image immediately
-  setInterval(rotatePhotos, 3000); // Rotate every 3 seconds
+  rotatePhotos();
+  setInterval(rotatePhotos, 3000);
 </script>
 
 
