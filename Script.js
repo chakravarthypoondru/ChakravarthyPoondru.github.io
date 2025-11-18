@@ -12,11 +12,11 @@ let capIndex = 0;
 function rotateCaption() {
   captionEl.textContent = captions[capIndex];
   captionEl.classList.add("show");
-  setTimeout(() => captionEl.classList.remove("show"), 2500);
+  setTimeout(() => captionEl.classList.remove("show"), 2000);
   capIndex = (capIndex + 1) % captions.length;
 }
 rotateCaption();
-setInterval(rotateCaption, 3000);
+setInterval(rotateCaption, 2500);
 
 // PHOTO ROTATION LOGIC
 const photos = [
@@ -31,4 +31,4 @@ function rotatePhotos() {
   pIndex = (pIndex + 1) % photos.length;
 }
 rotatePhotos();
-setInterval(rotatePhotos, 3000);
+setInterval(rotatePhotos, 2500);
