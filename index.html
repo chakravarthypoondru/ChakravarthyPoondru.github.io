@@ -88,12 +88,13 @@
       height: 60vh;
       min-height: 350px;
       max-height: 550px;
-      object-fit: cover;
+      object-fit: contain;      /* <--- This is the key change */
       border-radius: 12px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.06);
       border: none;
       display: block;
       margin: 0 auto;
+      background: #eee;         /* Optional background */
     }
     /* CAPTION TEXT: Overlay caption at bottom of photo */
     .caption {
