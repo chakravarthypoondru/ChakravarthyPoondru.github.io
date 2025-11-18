@@ -1,13 +1,32 @@
-// CAPTION ROTATION LOGIC
-const captions = [
-  "Health",
-  "Wealth",
-  "Layoffs",
-  "Emotions",
-  "News",
-  "AI & LLM Knowledge"
+// PHOTO ROTATION LOGIC
+const photos = [
+  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Flowers.jpg",
+  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Hills.jpg",
+  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Light.jpg"
 ];
-const captionEl = document.getElementById("main-caption");
+let pIndex = 0;
+const photoElement = document.getElementById("photo-rotator");
+
+// Defensive: show placeholder if picture fails
+photoElement.onerror = () => {
+  photoElement.src = "https://via.placeholder.com/400x400?text=No+Photo";
+};
+
+function rotatePhotos() {
+  photoElement.src = photos[pIndex];
+  pIndex = (pIndex + 1) % photos.length;
+}
+rotatePhotos();
+setInterval(rotatePhotos, 3000);
+
+// CAPTIONS IN BOTTOM PANEL
+const captions = [
+  "health is wealth",
+  "layoffs are part of job",
+  "panic leads to failure",
+  "life is not just job"
+];
+const captionEl = document.getElementById("bottom-caption");
 let capIndex = 0;
 function rotateCaption() {
   captionEl.textContent = captions[capIndex];
@@ -16,21 +35,4 @@ function rotateCaption() {
   capIndex = (capIndex + 1) % captions.length;
 }
 rotateCaption();
-setInterval(rotateCaption, 2500);
-
-// PHOTO ROTATION LOGIC
-const photos = [
-  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Flowers.jpg",
-  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Hills.jpg",
-  "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Light.jpg"
-];
-// If you ever add images to /photos be sure URLs are correct and web-ready formats!
-// You can test the links directly in your browser—these current ones should work.
-let pIndex = 0;
-const photoElement = document.getElementById("photo-rotator");
-function rotatePhotos() {
-  photoElement.src = photos[pIndex];
-  pIndex = (pIndex + 1) % photos.length;
-}
-rotatePhotos();
-setInterval(rotatePhotos, 2500);
+setInterval(rotateCaption, 3000);
