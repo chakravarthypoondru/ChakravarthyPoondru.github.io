@@ -24,6 +24,8 @@ const photos = [
   "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Hills.jpg",
   "https://raw.githubusercontent.com/chakravarthypoondru/ChakravarthyPoondru.github.io/main/photos/Light.jpg"
 ];
+// If you ever add images to /photos be sure URLs are correct and web-ready formats!
+// You can test the links directly in your browser—these current ones should work.
 let pIndex = 0;
 const photoElement = document.getElementById("photo-rotator");
 function rotatePhotos() {
